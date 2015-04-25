@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email     = 'sanadhussain@gmail.com'
   s.homepage  = 'https://github.com/sliaquat'
 
-  s.files       = `git ls-files`.split("\n")
+  s.files        = `git ls-files`.split("\n")
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
