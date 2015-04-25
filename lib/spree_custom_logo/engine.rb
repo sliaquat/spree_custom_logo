@@ -10,7 +10,7 @@ module SpreeCustomLogo
     end
 
 
-    config.assets.paths << File.expand_path("../../app/assets/images/**", __FILE__)
+    # config.assets.paths << File.expand_path("../../app/assets/images/**", __FILE__)
 
 
 

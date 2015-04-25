@@ -11,11 +11,11 @@
 
   <% else %>
       <%= link_to root_path,  class: "standard-logo", "data-dark-logo" => asset_path('LogoPlaceholder_light.png') do %>
-          <%= image_tag(asset_path 'LogoPlaceholder_dark.png') %>
+          <%= image_tag(asset_path('LogoPlaceholder_dark.png')) %>
       <% end %>
 
       <%= link_to root_path,  class: "retina-logo", "data-dark-logo" => asset_path('LogoPlaceholder_light@2x.png') do %>
-          <%= image_tag(asset_path 'LogoPlaceholder_dark@2x.png') %>
+          <%= image_tag(asset_path('LogoPlaceholder_dark@2x.png')) %>
       <% end %>
   <% end %>
 
