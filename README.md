@@ -1,7 +1,7 @@
 SpreeCustomLogo
 ===============
 
-Introduction goes here.
+Add ability to spree for uploading custom logo for the frontent
 
 Installation
 ------------
@@ -36,4 +36,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_custom_logo/factories'
 ```
 
-Copyright (c) 2015 [name of extension creator], released under the New BSD License
+Copyright (c) 2015 Sanad Liaquat, released under the New BSD License
