@@ -1,12 +1,12 @@
 <div id="logo">
   <% if Spree::FrontendLogo.first && Spree::FrontendLogo.first.id %>
 
-      <%= link_to root_path,  class: "standard-logo", "data-dark-logo" => Spree::FrontendLogo.first.attachment_light.url(:small) do %>
-          <%= image_tag(Spree::FrontendLogo.first.attachment_dark.url(:small)) %>
+      <%= link_to root_path,  class: "standard-logo", "data-dark-logo" => Spree::FrontendLogo.first.attachment_light.url(:original) do %>
+          <%= image_tag(Spree::FrontendLogo.first.attachment_dark.url(:original)) %>
       <% end %>
 
-      <%= link_to root_path,  class: "retina-logo", "data-dark-logo" => Spree::FrontendLogo.first.attachment_light.url(:logo) do %>
-          <%= image_tag(Spree::FrontendLogo.first.attachment_dark.url(:logo)) %>
+      <%= link_to root_path,  class: "retina-logo", "data-dark-logo" => Spree::FrontendLogo.first.attachment_light.url(:original) do %>
+          <%= image_tag(Spree::FrontendLogo.first.attachment_dark.url(:original)) %>
       <% end %>
 
   <% else %>
