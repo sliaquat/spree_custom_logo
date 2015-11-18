@@ -1,29 +1,37 @@
 <% content_for :page_title do %>
-    <%= "Logo Settings" %>
+    <%= "Logo And Favicon Settings" %>
 <% end %>
 
 <% if @frontend_logo.id %>
     <div class="row">
-      <div class="col-md-6">
-        <h4>Light</h4>
+      <div class="col-md-4">
+        <h4>Light Logo</h4>
         <%= link_to image_tag(@frontend_logo.attachment_light.url(:logo), class: 'thumbnail'), @frontend_logo.attachment_light.url(:original) %>
       </div>
-      <div class="col-md-6">
-        <h4>Dark</h4>
+      <div class="col-md-4">
+        <h4>Dark Logo</h4>
         <%= link_to image_tag(@frontend_logo.attachment_dark.url(:logo), class: 'thumbnail'), @frontend_logo.attachment_dark.url(:original) %>
+      </div>
+      <div class="col-md-4">
+        <h4>Favicon</h4>
+        <%= link_to image_tag(@frontend_logo.favicon.url(:original), class: 'thumbnail'), @frontend_logo.favicon.url(:original) %>
       </div>
     </div>
 <% else %>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <h4>Light</h4>
         <%= image_tag(asset_path('logo/LogoPlaceholder_light.png'), class: 'thumbnail') %>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <h4>Dark</h4>
           <%= image_tag(asset_path('logo/LogoPlaceholder_dark.png'), class: 'thumbnail') %>
         </div>
+      </div>
+      <div class="col-md-4">
+        <h4>Favicon</h4>
+        <%= image_tag(asset_path('favicon.ico'), class: 'thumbnail') %>
       </div>
     </div>
 <% end %>
@@ -32,9 +40,9 @@
 <%= form_for [:admin, @frontend_logo], method: :put, url: admin_frontend_logo_path, html: {multipart: true} do |f| %>
 
     <div data-hook="admin_image_form_fields" class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="form-group">
-          <h4>Choose a <strong>light</strong> logo of size 250x200 (wxh)</h4>
+          <h4>Choose a <strong>light</strong> logo with min size of 250x200 (wxh)</h4>
           <%= f.field_container :icon, class: ['form-group'] do %>
               <%= f.label :attachment_light, "Light Logo" %>
               <%= f.file_field :attachment_light, required: true %>
@@ -42,12 +50,23 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="form-group">
-          <h4>Choose a <strong>Dark</strong> logo of size 250x200 (wxh)</h4>
+          <h4>Choose a <strong>Dark</strong> logo with min size of  250x200 (wxh)</h4>
           <%= f.field_container :icon, class: ['form-group'] do %>
               <%= f.label :attachment_dark, "Dark Logo" %>
               <%= f.file_field :attachment_dark, required: true %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <h4>Choose a <strong>.ico</strong> file with min size of 32x32 (wxh)</h4>
+          <span>You can use <a href="http://www.favicomatic.com/" target="_blank">Favicomatic</a> online service to convert an image file to .ico format</span>
+          <%= f.field_container :icon, class: ['form-group'] do %>
+              <%= f.label :favicon, "Favicon" %>
+              <%= f.file_field :favicon, required: true %>
           <% end %>
         </div>
       </div>

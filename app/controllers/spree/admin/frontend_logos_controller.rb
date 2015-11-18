@@ -16,6 +16,7 @@ module Spree
         else
           @frontend_logo.attachment_light =  frontend_logo["attachment_light"]
           @frontend_logo.attachment_dark =  frontend_logo["attachment_dark"]
+          @frontend_logo.favicon =  frontend_logo["favicon"]
         end
 
         if (@frontend_logo.save)
@@ -32,7 +33,7 @@ module Spree
       private
 
       def frontend_logo
-        params.require(:frontend_logo).permit(:attachment_light, :attachment_dark)
+        params.require(:frontend_logo).permit(:attachment_light, :attachment_dark, :favicon)
       end
 
 

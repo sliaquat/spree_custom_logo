@@ -16,6 +16,13 @@ class Spree::FrontendLogo < ActiveRecord::Base
                     path: ':rails_root/public/spree/logo_light/:id/:style/:basename.:extension',
                     convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
 
+  has_attached_file :favicon,
+                    styles: { small: '16x16>', favicon: '32x32>'},
+                    default_style: :favicon,
+                    url: '/spree/favicon/:id/:style/:basename.:extension',
+                    path: ':rails_root/public/spree/favicon/:id/:style/:basename.:extension',
+                    convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
+
   validates_attachment :attachment_dark,
                        :presence => true,
                        :content_type => { :content_type => %w(image/jpeg image/jpg image/png image/gif) }
